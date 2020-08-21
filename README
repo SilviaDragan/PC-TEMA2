@@ -1,0 +1,56 @@
+Dragan Silvia 311 CB tema 2
+
+functii:
+
+-Ultimalitera-
+Returneaza ultima litera a unui cuvant dat.
+
+-Uppercase-
+Verific daca primul caracter al poeziei primite ca parametru e litera minuscula.
+In caz afirmativ, o transform in litera majuscula prin adunare cu 32. 
+La fel si in cazul in care un caracter are inaintea sa \n, insemnand ca este
+prim caracter pe vers nou.
+Altfel, caracterele majuscule le transform in caractere minuscule.
+
+-Trimming-
+Verific daca exista caractere nedorite (.,:;!?), daca da le elimin prin mutarea
+la stanga cu un caracter al intregului sir de la pozitia respectiva.
+La fel si in cazul spatiilor redundante.
+
+-SwitchWord-
+Schimba un cuvant cu altul dat, in fuctie de pozitie. Se foloseste un string auxiliar.
+
+-functiile de rima-
+Pentru fiecare tip de rima am facut functii separate. Se bazeaza pe acelasi algoritm, 
+dar conteaza ordinea versurilor. Pentru perechi de cate 4 versuri, 
+verific daca ultimele litere ale ultimelor cuvinte nu sunt egale, 
+adica cuvintele nu rimeaza, caut sinonim pentru primul. Daca se gasesc mai multe sinonime, 
+il aleg pe cel mai bun lexicografic, apoi inlocuiesc in poezie cuvantul cu sinonimul sau. 
+Daca nu se gaseste niciun sinonim care sa rimeze, procedez la fel pentru cuvantul
+corespondent rimei.
+
+-rhimy-
+
+Construiesc o matrice de versuri pentru a accesa mai usor ultimul cuvant de pe fiecare vers.
+Pentru fiecare catren, adica repet instructiunile din 4 in 4 versuri, determin
+ ultimul cuvant de pe fiecare rand cu strrchr. Ii fac o copie careia ii fac
+doar trimming, pe care o voi folosi pt a inlocui cuvantul cu sinonim,
+iar cuvintelor le fac si uppercase, pentru a le cauta sinonim cu functia data.
+Verific ce fel de rima primeste functia si apelez functiile aferente. 
+
+-silly-
+Parcurg poezia pana la intalnirea lui NULL, verific daca caracterul curent este
+litera, daca da, generez un sample random, iar daca acesta e mai < decat
+probabilitatea primita ca parametru, transform caracterul din minuscula in 
+majuscula sau invers.
+
+-friendly-
+Folosind strtok, scot cuvintele din matrice. Le fac cate o copie careia ii
+aplic uppercase si trimming, apoi caut diminutiv pentru aceasta copie, iar 
+daca gasesc, in inlocuesc in poezie folosind functia anterior declarata
+switch_word.
+
+-main-
+Construiesc consola interactiva. Citesc o cerinta si cat timp este diferita de
+quit, apelez functia corespunzatoare tipului de cerinta primit de la tastatura.
+
